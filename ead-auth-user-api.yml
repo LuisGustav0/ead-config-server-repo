@@ -46,6 +46,18 @@ resilience4j:
         maxAttempts: 3
         waitDuration: 5s
 
+authuser:
+  refreshscope:
+    name: EadAuthUserApi
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+
 # Properties
 ead:
   api:
