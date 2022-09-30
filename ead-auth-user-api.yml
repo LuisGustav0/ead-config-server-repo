@@ -48,7 +48,7 @@ resilience4j:
 
 authuser:
   refreshscope:
-    name: EadAuthUserApi
+    name: EadAuthUserApiUpdate
 
 management:
   endpoints:
