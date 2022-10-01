@@ -6,13 +6,6 @@ server:
 spring:
   application:
     name: ead-course-api
-  # config-server
-  config:
-    import: 'optional:configserver:'
-    cloud:
-      config:
-        discovery:
-          serviceId: ead-config-server
   # Banco de dados
   datasource:
     url: jdbc:postgresql://localhost:5432/db_ead_notification
@@ -53,10 +46,3 @@ management:
         include:
           - refresh
           - health
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: 'http://localhost:8761/eureka'
-  instance:
-    hostname: localhost
