@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: ead-course-api
+    name: ead-notification-api
   # Banco de dados
   datasource:
     url: jdbc:postgresql://localhost:5432/db_ead_notification
