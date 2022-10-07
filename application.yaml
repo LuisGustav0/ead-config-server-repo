@@ -2,6 +2,9 @@ ead:
   serviceRegistry:
     username: serviceRegistry
     password: ${SERVICE_REGISTRY_PASSWORD}
+  auth:
+    jwtSecret: ${JWT_SECRET}
+    jwtExpirationMs: 14400000
 
 eureka:
   client:
