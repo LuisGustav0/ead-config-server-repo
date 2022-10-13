@@ -1,6 +1,6 @@
 ead:
   serviceRegistry:
-    username: serviceRegistry
+    username: ${SERVICE_REGISTRY_USERNAME}
     password: ${SERVICE_REGISTRY_PASSWORD}
   auth:
     jwtSecret: ${JWT_SECRET}
@@ -11,4 +11,5 @@ eureka:
     service-url:
       defaultZone: 'http://${ead.serviceRegistry.username}:${ead.serviceRegistry.password}@localhost:8761/eureka'
   instance:
-    hostname: localhost
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80

@@ -1,0 +1,15 @@
+ead:
+  serviceRegistry:
+    username: ${SERVICE_REGISTRY_USERNAME}
+    password: ${SERVICE_REGISTRY_PASSWORD}
+  auth:
+    jwtSecret: ${JWT_SECRET}
+    jwtExpirationMs: 14400000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URL}
+  instance:
+    hostname: ${APP_DOMAIN_NAME}
+    non-secure-port: 80
