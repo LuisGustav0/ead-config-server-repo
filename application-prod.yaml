@@ -1,9 +1,9 @@
 ead:
   serviceRegistry:
-    username: ${SERVICE_REGISTRY_USERNAME}
-    password: ${SERVICE_REGISTRY_PASSWORD}
+    username: serviceRegistryProd
+    password: '{cipher}602ca9a50874b2d859d609bd8b15e80996dd4b9d1cffeaecf7039c74eac3f4b4'
   auth:
-    jwtSecret: ${JWT_SECRET}
+    jwtSecret: '{cipher}33ab40405d3c2dd8fc51ea09a5cbdb6b48aeccd86fa174c37ad25790ebf731f6f99b627b95b73c80ef21928365fb291221809837619547ad722f4d13d7aa320ba7e1102b0906e82e2d0e96eec0a2412684041928f16c74abeebf6f07be0fb41d'
     jwtExpirationMs: 14400000
 
 eureka:
