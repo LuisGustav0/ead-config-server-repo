@@ -1,5 +1,5 @@
 server:
-  port: 8087
+  port: ${PORT}
   servlet:
     context-path: '/ead-auth-user/'
 
@@ -8,9 +8,9 @@ spring:
     name: ead-auth-user-api
   # Banco de dados
   datasource:
-    url: jdbc:postgresql://localhost:5432/db_ead_auth_user
-    username: postgres
-    password: ${PASSWORD_POSTGRES}
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
@@ -19,15 +19,7 @@ spring:
         show_sql: true
   # RabbitMQ
   rabbitmq:
-    addresses: ${RABBITMQ_ADDRESSES}
-
-# Log
-logging:
-  level:
-    com.ead: TRACE
-    root: INFO
-    org.springframework.web: DEBUG
-    org.hibernate: INFO
+    addresses: ${CLOUDAMQP_URL}
 
 # Circuit breaker
 resilience4j:
