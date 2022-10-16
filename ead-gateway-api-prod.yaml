@@ -1,0 +1,21 @@
+server:
+  port: ${PORT}
+
+spring:
+  cloud:
+    gateway:
+      # Rotas do gateway
+      # lb: Load Balancer
+      routes:
+       - id: auth-user-api
+         uri: lb://ead-auth-user-api
+         predicates:
+          - Path=/ead-auth-user/**
+       - id: course-api
+         uri: lb://ead-course-api
+         predicates:
+          - Path=/ead-course/**
+       - id: notification-api
+         uri: lb://ead-notification-api
+         predicates:
+          - Path=/ead-notification/**
