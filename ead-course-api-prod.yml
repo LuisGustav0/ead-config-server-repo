@@ -1,0 +1,49 @@
+server:
+  port: ${PORT}
+  servlet:
+    context-path: '/ead-course/'
+
+spring:
+  application:
+    name: ead-course-api
+  # Banco de dados
+  datasource:
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+  # RabbitMQ
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
+
+# Properties
+ead:
+  api:
+    url:
+      auth-user: http://ead-auth-user-api/ead-auth-user
+    path:
+      users: /users
+      courses: /courses
+      courses-subscription: /courses/subscription
+  broker:
+    exchange:
+      userEvent: ead.userevent
+      notificationCommandExchange: ead.notificationcommand
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.course
+    key:
+      notificationCommandKey: ms.notification
