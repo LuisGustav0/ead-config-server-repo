@@ -36,3 +36,12 @@ management:
         include:
           - refresh
           - health
+
+# Properties
+ead:
+  broker:
+    exchange:
+      userEvent: ead.userevent
+    queue:
+      userEventQueue:
+        name: ead.userevent.ms.payment   
