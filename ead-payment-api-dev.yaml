@@ -1,0 +1,38 @@
+server:
+  port: 8086
+  servlet:
+    context-path: '/ead-payment/'
+
+spring:
+  application:
+    name: ead-payment-api
+  # Banco de dados
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_ead_payment
+    username: postgres
+    password: ${JDBC_DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+  # RabbitMQ
+  rabbitmq:
+    addresses: ${CLOUDAMQP_URL}
+
+# Log
+logging:
+  level:
+    com.ead: INFO
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - refresh
+          - health
